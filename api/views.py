@@ -15,7 +15,7 @@ class ProfileAPI(APIView):
     * Requires token authentication.
     * Only admin users are able to access this view.
     """
-    authentication_classes = [authentication.TokenAuthentication]
+    authentication_classes = [authentication.BasicAuthentication, authentication.TokenAuthentication]
     permission_classes = [permissions.IsAdminUser]
     def get(self, request, format=None):
         
